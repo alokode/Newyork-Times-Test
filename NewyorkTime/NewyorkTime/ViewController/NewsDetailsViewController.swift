@@ -20,6 +20,7 @@ class NewsDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //Configure UI
     func configUI(){
         self.newsContentLabel.text = newsItem?.abstract ?? ""
         self.newsTitleLabel.accessibilityIdentifier = "NewsDetailsTitleLabel"

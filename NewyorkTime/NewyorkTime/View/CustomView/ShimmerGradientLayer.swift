@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 
+//Shimmer graditent layer
 class ShimmerGradientLayer:CAGradientLayer {
     var tag:Int = 1000
     override init() {
         super.init()
-        print("#ALK SHIMMER  ShimmerGradientLayer init")
         let gradientColorOne : CGColor = UIColor(white: 0.85, alpha: 1.0).cgColor
         let gradientColorTwo : CGColor = UIColor(white: 0.95, alpha: 1.0).cgColor
         self.startPoint = CGPoint(x: 0.0, y: 1.0)

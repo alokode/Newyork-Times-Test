@@ -14,6 +14,8 @@ enum DateFormatType:String {
 }
 
 class DateUtil {
+    
+    //Return date string in readable format
     static func getFormatedDateString(from dateString:String,to format:DateFormatType) -> String?{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormatType.yyMMddTHHmmssZ.rawValue

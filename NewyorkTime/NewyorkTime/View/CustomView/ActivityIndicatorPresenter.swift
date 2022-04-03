@@ -14,6 +14,7 @@ protocol ActivityIndicatorPresenter {
     func hideActivityIndicator()
 }
 
+//For activity indicator
 extension ActivityIndicatorPresenter where Self: UIViewController {
     func showActivityIndicator() {
         DispatchQueue.main.async {

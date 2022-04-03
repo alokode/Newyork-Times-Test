@@ -14,6 +14,7 @@ class ImageDownloader {
     private let cachedImages = NSCache<NSURL,UIImage>()
     private var completionHandlers = [NSURL: [(UIImage?,NSURL?) -> ()]]()
 
+    //Download images async and return image and url
     final func downloadImage(url:NSURL, completion : @escaping ((_ image:UIImage?,_ url:NSURL?) -> ()) ) {
         if let cachedImage = cachedImages.object(forKey: url) {
             completion(cachedImage, url)

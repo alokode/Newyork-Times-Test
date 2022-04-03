@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+extension UIView { //To add shimmer animation for images
     
     private func addAnimation() -> CABasicAnimation {
         let animation = CABasicAnimation(keyPath: "locations")

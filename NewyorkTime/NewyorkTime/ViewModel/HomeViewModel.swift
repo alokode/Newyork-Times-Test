@@ -13,6 +13,8 @@ class HomeViewModel {
     var showLoader:((Bool)->()) = {_ in }
     var news:[News] = []
     var isDataLoading = false
+    
+    //To fetch news with page number
     func getNews(){
         isDataLoading = true
         let api : APIS = .articleSearch(page: page)
@@ -31,6 +33,8 @@ class HomeViewModel {
         }
     }
     
+    //To prefetch news if the data not loaded already
+    //If user scrolls to half othe current news item count then load next
     func prefetchNewsIfNeeded(for indexPath:IndexPath?){
         guard let firstRow  = indexPath, !isDataLoading else {
             return
@@ -42,6 +46,7 @@ class HomeViewModel {
         }
     }
     
+    //To return news item at index
     func getNewsItem(at index:Int) -> News?{
         guard news.count > index else {
             return nil

@@ -11,16 +11,6 @@ class HomeViewController: UIViewController,ActivityIndicatorPresenter {
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     @IBOutlet weak var tableView: UITableView!
     var viewModel : HomeViewModel = HomeViewModel()
-    var isDarkMode:Bool {
-        switch traitCollection.userInterfaceStyle {
-            case .light, .unspecified:
-                return false
-            case .dark:
-            return true
-        @unknown default:
-            return false
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,21 +28,9 @@ class HomeViewController: UIViewController,ActivityIndicatorPresenter {
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
-    @objc func switchMode(){
-        overrideUserInterfaceStyle = isDarkMode ? .light : .dark
-        self.navigationController?.navigationBar.backgroundColor = isDarkMode ? .black : .white
-        let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes =  [.foregroundColor: isDarkMode ? UIColor.white : UIColor.black]
-        appearance.largeTitleTextAttributes = [.backgroundColor: isDarkMode ? UIColor.clear : UIColor.white]
-       
-        navigationItem.standardAppearance = appearance
-        navigationItem.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.titleTextAttributes = [.backgroundColor: UIColor.black]
-    }
-    
-    
 
+    
+//Configure viewModel
     func configViewModel(){
         viewModel.showLoader = { show in
             if show {

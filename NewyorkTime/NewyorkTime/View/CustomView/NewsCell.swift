@@ -27,6 +27,7 @@ class NewsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //Confiture cell with news item
     func configWithNews(newsItem:News){
         self.titleLabel.text = newsItem.headline?.main ?? ""
         self.titleLabel.accessibilityIdentifier = "NewsTitleLabel"
@@ -38,7 +39,7 @@ class NewsCell: UITableViewCell {
         } else {
             self.newsImageView.image = UIImage.init(named: "news_placeHolder")
         }
-        self.dateLabel.text = newsItem.readableDateString ?? ""
+        self.dateLabel.text = newsItem.readableDateString
         
     }
 

@@ -18,6 +18,8 @@ enum APIError: Error {
 class NetworkManager {
     static let sharedManager = NetworkManager.init()
     private init(){}
+    
+    //To fetch data based on API end point
     func fetchData<T:Codable> (api:APIS,completion:@escaping (Result<T,Error>)->()){
         guard let url = api.urlComponents?.url else{
             completion(.failure(APIError.invalidURL))

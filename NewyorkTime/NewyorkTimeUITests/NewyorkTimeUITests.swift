@@ -31,6 +31,7 @@ class NewyorkTimeUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    //To test navigation from cell to NewsDetails page
     func testNewsClick(){
         let app = XCUIApplication()
         app.launch()
